@@ -1,0 +1,29 @@
+.calculator {
+  width: 70vh;
+  margin: 2vh auto; }
+  .calculator .result {
+    background-color: #EEEEEE;
+    height: 20vh;
+    text-align: right;
+    font-size: 10vh; }
+  .calculator .preview {
+    background-color: #BDC3C7;
+    height: 10vh;
+    text-align: right;
+    font-size: 6vh; }
+  .calculator .num {
+    font-size: 6vh;
+    height: 12vh;
+    text-align: center;
+    background-color: #869198; }
+    .calculator .num:hover {
+      background-color: #afb6bb; }
+  .calculator .symbol {
+    font-size: 5vh;
+    height: 8vh;
+    text-align: center;
+    background-color: #bbbbbb; }
+    .calculator .symbol:hover {
+      background-color: #e1e1e1; }
+
+/*# sourceMappingURL=style.css.map */
