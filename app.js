@@ -1,21 +1,13 @@
 var Calci = {
   handleInput : function (input) {
     if (input == "DEL") {
-      this.preview = this.preview.slice(0, -1);
-      $('.preview').empty();
-      $('.preview').append(this.preview);
+      this.handleDelete();
     } else if (input == "AC") {
       this.preview = "";
       $('.result').empty();
       $('.preview').empty();
     } else if (input == "=") {
-      $('.result').empty();
-      this.preview = this.preview.replace(/X/g, "*");
-      var result = eval(this.preview);
-      $('.result').append(result);
-      this.preview = "";
-      $('.preview').empty();
-      $('.preview').append(result);
+      this.findResult();
     } else if (this.operators.indexOf(input) == -1){
       $('.preview').append(input);
       this.preview = $('.preview').html();
@@ -28,7 +20,21 @@ var Calci = {
     }
   },
   operators: [".", "+", "-", "X", "/"],
-  preview: ""
+  preview: "",
+  handleDelete : function() {
+    this.preview = this.preview.slice(0, -1);
+    $('.preview').empty();
+    $('.preview').append(this.preview);
+  },
+  findResult : function () {
+    $('.result').empty();
+    this.preview = this.preview.replace(/X/g, "*");
+    var result = eval(this.preview);
+    $('.result').append(result);
+    this.preview = "";
+    $('.preview').empty();
+    $('.preview').append(result);
+  }
 }
 
 $(document).ready(function () {
